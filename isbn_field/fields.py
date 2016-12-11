@@ -1,10 +1,8 @@
 from .validators import ISBNValidator
-from django.db.models import CharField, SubfieldBase
+from django.db.models import CharField
 
 
 class ISBNField(CharField):
-
-    __metaclass__ = SubfieldBase
 
     def __init__(self, *args, **kwargs):
 

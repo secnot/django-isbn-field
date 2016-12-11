@@ -1,1 +1,1 @@
-from fields import ISBNField
+from .fields import ISBNField
