@@ -26,7 +26,7 @@ setup(
 
 	# Package
 	packages = ['isbn_field'],
-	install_requires = ['Django'],
+	install_requires = ['Django', 'python-stdnum>=1.5', 'six'],
 	zip_safe = False, 
 	include_package_data=True,
 )
