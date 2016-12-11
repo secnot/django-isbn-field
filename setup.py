@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
 	name='django-isbn-field',
-	version='0.2',
+	version='0.2.1',
 	description='Provides a model field to manage and validate isbn numbers',
 
 	url='https://github.com/secnot/django-isbn-field',
