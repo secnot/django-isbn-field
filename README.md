@@ -11,10 +11,17 @@ It has been tested on
 
 ## Installation
 
-Using Pypi
+From Pypi
 
 ```bash
 $ pip install django-isbn-field
+```
+
+or from the repository
+
+```bash
+$ git clone https://github.com/secnot/django-isbn-field
+$ python setup.py install
 ```
 
 ## Usage 
