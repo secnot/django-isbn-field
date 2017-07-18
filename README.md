@@ -7,7 +7,7 @@ Provides django model field to store and validate ISBN numbers.
 It has been tested on
 
 * Python >= 3
-* Django 1.7, 1.0, 1.9, 1.10
+* Django 1.7, 1.8, 1.9, 1.10, 1.11
 
 ## Installation
 
