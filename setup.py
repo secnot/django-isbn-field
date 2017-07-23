@@ -1,14 +1,15 @@
 from setuptools import setup
 
+
 setup(
 	name='django-isbn-field',
 	version='0.4',
-	description='Provides a model field to manage and validate isbn numbers',
+	description='Provides a model and form fields to manage and validate ISBN numbers',
 
 	url='https://github.com/secnot/django-isbn-field',
 	author='secnot',
 	
-	license='LPGL, see LICENSE file.',
+	license='LPGLv3.0',
 	
         keywords=['django', 'isbn', 'field'],
 
@@ -19,7 +20,7 @@ setup(
         'Intended Audience :: Developers',
         'Environment :: Web Environment',
         'Framework :: Django',
-		'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
+	'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
         'Development Status :: 5 - Production/Stable',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3'], 
