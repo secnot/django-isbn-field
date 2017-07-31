@@ -1,0 +1,28 @@
+language: python
+python: 2.7
+env:
+  - TOXENV=py32-17
+  - TOXENV=py32-18
+  - TOXENV=py32-19
+  - TOXENV=py32-110
+  - TOXENV=py32-111
+  - TOXENV=py33-17
+  - TOXENV=py33-18
+  - TOXENV=py33-19
+  - TOXENV=py33-110
+  - TOXENV=py33-111
+  - TOXENV=py34-17
+  - TOXENV=py34-18
+  - TOXENV=py34-19
+  - TOXENV=py34-110
+  - TOXENV=py34-111
+  - TOXENV=py35-17
+  - TOXENV=py35-18
+  - TOXENV=py35-19
+  - TOXENV=py35-110
+  - TOXENV=py35-111
+install:
+  - pip install "pip<8.0.0"
+  - pip install tox
+script:
+  - tox
