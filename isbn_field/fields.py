@@ -8,7 +8,7 @@ class ISBNField(CharField):
 
         # Max length is 13 chars for ISBN12
         kwargs['max_length'] = 13
-        kwargs['verbose_name'] = 'ISBN'
+        kwargs['verbose_name'] = u'ISBN'
         kwargs['validators'] = [ISBNValidator]
         super(ISBNField, self).__init__(*args, **kwargs)
 
