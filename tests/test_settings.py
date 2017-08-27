@@ -1,4 +1,8 @@
-SECRET_KEY = 'a_testing_key'
+SECRET_KEY = 'secret-key'
+
+INSTALLED_APPS = [
+    "tests",
+]
 
 DATABASES = {
     'default': {
@@ -6,3 +10,4 @@ DATABASES = {
         'NAME': ':memory:',
     }
 }
+

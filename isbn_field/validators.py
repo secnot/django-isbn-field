@@ -17,4 +17,7 @@ def ISBNValidator(raw_isbn):
     if not isbn.is_valid(isbn_to_check):
         raise ValidationError(_(u'Invalid ISBN: Failed checksum'))
 
+    if isbn_to_check != isbn_to_check.upper():
+        raise ValidationError(_(u'Invalid ISBN: Only upper case allowed'))
+
     return True
