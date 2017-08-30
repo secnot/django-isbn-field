@@ -47,4 +47,17 @@ class Book(models.Model):
 	...
 ```
 
-It will raise ValidationError when the number provided is invalid
+It will raise a ValidationError when the number provided is invalid.
+
+Further, by default any entered ISBN will be cleaned (dashes and spaces are removed) and stored in this canonical form. You can disable this and store the original form through the `clean_isbn` flag.
+
+```python
+from django.db import models
+from isbn_field import ISBNField
+
+class Book(models.Model):
+	dirty_isbn = ISBNField(clean_isbn=False)
+	...
+```
+
+In case you expect very chaotic input (e.g. more than one space or dash between digits), you might also want to increase the `max_length` of the field to allow for enough room for the string in the database.
