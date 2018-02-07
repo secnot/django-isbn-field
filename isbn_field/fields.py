@@ -33,12 +33,14 @@ class ISBNField(CharField):
         """Remove dashes, spaces, and convert isbn to uppercase before saving
         when clean_isbn is enabled"""
         if self.clean_isbn:
-            cleaned_isbn = getattr(model_instance, self.attname).\
-                replace(' ', '').replace('-', '').upper()
-            setattr(model_instance, self.attname, cleaned_isbn)
-            return cleaned_isbn
-        else:
-            return super(ISBNField, self).pre_save(model_instance, add)
+            try:
+                cleaned_isbn = getattr(model_instance, self.attname).\
+                    replace(' ', '').replace('-', '').upper()
+                setattr(model_instance, self.attname, cleaned_isbn)
+                return cleaned_isbn
+            except AttributeError:
+                pass
+        return super(ISBNField, self).pre_save(model_instance, add)
 
     def __unicode__(self):
         return self.value
