@@ -4,7 +4,7 @@ from isbn_field import ISBNField
 
 from django.test import TestCase
 
-from .models import CleanISBNModel, DirtyISBNModel
+from .models import CleanISBNModel, DirtyISBNModel, BlankISBNModel, BlankNullISBNModel
 
 class ISBNValidatorTest(TestCase):
 
@@ -70,3 +70,14 @@ class ISBNFieldTest(TestCase):
 
             m = DirtyISBNModel.objects.create(isbn=original)
             self.assertEqual(m.isbn, original)
+
+    def test_isbn_field_blank(self):
+        """Test empty values are accepted when blank=True"""
+        m = BlankISBNModel.objects.create(isbn="")
+        self.assertEqual(m.isbn, "")
+
+    def test_isbn_field_null(self):
+        """Test null values are accested when blank=True null=True"""
+        m = BlankNullISBNModel.objects.create(isbn=None)
+        self.assertEqual(m.isbn, None)
+
