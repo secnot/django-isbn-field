@@ -8,9 +8,9 @@ setup(
 
 	url='https://github.com/secnot/django-isbn-field',
 	author='secnot',
-	
+
 	license='LPGLv3.0',
-	
+
         keywords=['django', 'isbn', 'field'],
 
 	classifiers=[
@@ -27,7 +27,8 @@ setup(
 
 	# Package
 	packages = ['isbn_field'],
+        package_data={'isbn_field': ['locale/*/LC_MESSAGES/django.*']},
 	install_requires = ['Django', 'python-stdnum>=1.5', 'six'],
-	zip_safe = False, 
+	zip_safe = False,
 	include_package_data=True,
 )
