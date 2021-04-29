@@ -6,6 +6,11 @@ class CleanISBNModel(models.Model):
     isbn = ISBNField() # clean_isbn=True (default)
 
 
+class UniqueCleanISBNModel(models.Model):
+
+    isbn = ISBNField(unique=True) # clean_isbn=True (default)
+
+
 class DirtyISBNModel(models.Model):
     
     isbn = ISBNField(clean_isbn=False)
