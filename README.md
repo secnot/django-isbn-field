@@ -1,4 +1,4 @@
-# django-isbn-field [![Build Status](https://travis-ci.org/secnot/django-isbn-field.svg?branch=master)](https://github.com/secnot/django-isbn-field/actions)
+# django-isbn-field [![Build Status](https://github.com/secnot/django-isbn-field/actions/workflows/django.yml/badge.svg)](https://github.com/secnot/django-isbn-field/actions)
 
 Provides django model field to store and validate ISBN numbers.
 
