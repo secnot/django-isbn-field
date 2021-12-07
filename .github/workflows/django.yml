@@ -28,4 +28,4 @@ jobs:
         pip install tox tox-gh-actions
     - name: Run Tests
       run: |
-        python manage.py test
+        tox
