@@ -1,10 +1,12 @@
 from setuptools import setup
 
+long_description='Provides django model field to store and validate ISBN numbers.'
 
 setup(
 	name='django-isbn-field',
-	version='0.5.2',
+	version='0.5.3',
 	description='Provides a model and form fields to manage and validate ISBN numbers',
+        long_description=long_description,
 
 	url='https://github.com/secnot/django-isbn-field',
 	author='secnot',
