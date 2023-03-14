@@ -1,10 +1,9 @@
 from django.core.exceptions import ValidationError
-from isbn_field.validators import ISBNValidator
-from isbn_field import ISBNField
-
 from django.test import TestCase
 
-from .models import CleanISBNModel, DirtyISBNModel, BlankISBNModel, BlankNullISBNModel
+from isbn_field.validators import ISBNValidator
+from .models import CleanISBNModel, DirtyISBNModel, BlankISBNModel, BlankNullISBNModel, UniqueCleanISBNModel
+
 
 class ISBNValidatorTest(TestCase):
 
@@ -70,6 +69,17 @@ class ISBNFieldTest(TestCase):
 
             m = DirtyISBNModel.objects.create(isbn=original)
             self.assertEqual(m.isbn, original)
+
+    def test_isbn_field_unique_clean(self):
+        UniqueCleanISBNModel.objects.create(isbn='0-765-348-276')
+
+        with self.assertRaises(ValidationError):
+            instance = UniqueCleanISBNModel(isbn='0-765-348-276')
+            instance.full_clean()
+            # The previous line should throw the expected exception,
+            # but if it does not, the line below throwing an IntegrityError
+            # serves as a sanity check for this test.
+            UniqueCleanISBNModel.objects.create(isbn='0-765-348-276')
 
     def test_isbn_field_blank(self):
         """Test empty values are accepted when blank=True"""

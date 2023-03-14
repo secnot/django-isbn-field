@@ -38,5 +38,11 @@ class ISBNField(CharField):
             setattr(model_instance, self.attname, cleaned_isbn)
         return super(ISBNField, self).pre_save(model_instance, add)
 
+    def to_python(self, value):
+        if self.clean_isbn and value not in EMPTY_VALUES:
+            return value.replace(' ', '').replace('-', '').upper()
+        else:
+            return value
+
     def __unicode__(self):
         return self.value
